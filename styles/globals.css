@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* Starry background image */
+    background-image: url("/images/stars-bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-display;
+  }
+
+  h2 {
+    @apply text-heading1;
+  }
+
+  h3 {
+    @apply text-heading2;
+  }
+
+  p {
+    @apply text-body text-muted;
+  }
+
+  a {
+    @apply hover:opacity-70 transition-opacity;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent text-white border-2 border-white font-semibold rounded-lg hover:bg-white/10 transition-colors;
+  }
+
+  .section-container {
+    @apply py-16 md:py-24 px-4 md:px-8 max-w-6xl mx-auto;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-6 text-white;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-gray-700 rounded-lg focus:border-white focus:outline-none transition-colors;
+  }
+
+  .input-field::placeholder {
+    @apply text-gray-500;
+  }
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Grid background (optional subtle pattern) */
+.bg-grid {
+  background-image: 
+    linear-gradient(0deg, transparent 24%, rgba(0,0,0,.05) 25%, rgba(0,0,0,.05) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.05) 75%, rgba(0,0,0,.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(0,0,0,.05) 25%, rgba(0,0,0,.05) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.05) 75%, rgba(0,0,0,.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
